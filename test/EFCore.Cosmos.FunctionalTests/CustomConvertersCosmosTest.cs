@@ -125,6 +125,18 @@ namespace Microsoft.EntityFrameworkCore.Cosmos
             base.Can_read_back_bool_mapped_as_int_through_navigation();
         }
 
+        [ConditionalFact(Skip = "Issue #17246")]
+        public override void Value_conversion_is_appropriately_used_for_join_condition()
+        {
+            base.Value_conversion_is_appropriately_used_for_join_condition();
+        }
+
+        [ConditionalFact(Skip = "Issue #17246")]
+        public override void Value_conversion_is_appropriately_used_for_left_join_condition()
+        {
+            base.Value_conversion_is_appropriately_used_for_left_join_condition();
+        }
+
         public class CustomConvertersCosmosFixture : CustomConvertersFixtureBase
         {
             protected override ITestStoreFactory TestStoreFactory => CosmosTestStoreFactory.Instance;
